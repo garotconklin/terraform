@@ -37,7 +37,7 @@ provisioner "remote-exec" {
              "sudo yum install -y docker",
              "sudo service docker restart",
              "sudo docker pull redmine",
-             "sudo docker run -d -p 80:3000 redmine"  
+             "sudo docker run -d --restart=unless-stopped -p 80:3000 redmine"  
             ]
   }
 }
